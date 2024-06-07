@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Kerja Sama</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!--slick slider stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- slick slider -->
+
+  <link rel="stylesheet" href="css/slick-theme.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+    div {
+        margin-bottom: 15px;
+    }
+    input[type="text"], input[type="email"], input[type="file"], input[type="url"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #28a745;
+        color: #ffffff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #218838;
+    }
+</style>
+
+</head>
+
+<body class="sub_page">
+
+  <div class="main_body_content">
+
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="">
+            </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Beranda <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> Tentang</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Produk</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="testimonial.html">Kerja Sama</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Kontak Kami</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+
+    <form id="contact-form" onsubmit="sendMessage(event)">
+      <div>
+          <input type="text" id="name" placeholder="Nama Lengkap" required />
+      </div>
+      <div>
+          <input type="text" id="phone" placeholder="Nomor HandPhone" required />
+      </div>
+      <div>
+          <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div>
+          <input type="url" id="location-link" placeholder="Link Share Location" required />
+      </div>
+      <div class="d-flex">
+          <button type="submit">
+              Kirim
+          </button>
+      </div>
+  </form>
+
+  <script>
+      function sendMessage(event) {
+          event.preventDefault(); // Mencegah pengiriman formulir default
+
+          // Ambil data dari input
+          const name = document.getElementById('name').value;
+          const phone = document.getElementById('phone').value;
+          const email = document.getElementById('email').value;
+          const locationLink = document.getElementById('location-link').value;
+
+          // Buat pesan WhatsApp
+          const whatsappNumber = '6281234567890'; // Ganti dengan nomor WhatsApp admin
+          const whatsappMessage = `Nama: ${name}%0ANomor HandPhone: ${phone}%0AEmail: ${email}%0ALink Share Location: ${locationLink}%0ATambahkan foto KTP dan lokasi.`;
+
+          // Buat URL WhatsApp
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+          // Buka WhatsApp Web dengan pesan yang sudah terisi
+          window.open(whatsappUrl, '_blank');
+      }
+  </script>
+    </body>
+    </html>
+    
+
+</body>
+
+</html>
